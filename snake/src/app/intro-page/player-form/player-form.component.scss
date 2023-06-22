@@ -1,0 +1,59 @@
+label {
+    margin-left: 15px;
+    position: relative;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+
+
+.form {
+    background-color: rgb(233, 240, 230);
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px;
+    height: 350px;
+    width: 550px;
+
+    border: solid;
+}
+input {
+    position: relative;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    width: 300px;
+    border: solid;
+    border-color: lightblue;
+    padding: 5px;
+    font-size: 15px;
+
+&.ng-touched {
+&.ng-invalid {
+    border: 2px solid red;
+}
+}
+}
+button {
+    position: relative;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    border-style: solid;
+    width: 150px;
+    border-radius: 8px;
+    display: flex;
+    text-decoration: none;
+    
+}
+
+p {
+    margin-top: 50px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.palette{
+    display: inline-block;
+    text-align: center;
+}

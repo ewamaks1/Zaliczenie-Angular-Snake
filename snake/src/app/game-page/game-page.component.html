@@ -1,0 +1,17 @@
+<h1>Hello, {{ playerData.name }}!</h1>
+<app-game-info [gameStatus]="gameStatus" [gameInfo]="gameInfo"></app-game-info>
+<button class="palette-changer" (click)="switchPaletteMode()">
+  {{ palette === 'normal' ? 'CHANGE TO HIGH CONTRAST PALETTE' : 'CHANGE TO COLOR' }}
+</button>
+<div class="snake-game">
+<ngx-snake [class]="palette" (foodEaten)="foodEaten()" (gameOver)="gameOver()"></ngx-snake>
+<app-controller 
+  [_snake]="_snake"
+  [gameInfo]="gameInfo"
+  (saveStatusEvent)="onStatusSaved($event)"
+  (startTimer)="startTimer()"
+  (stopTimer)="stopTimer()"></app-controller>
+</div>
+<app-highScores class="highscores" [highScores]="highScores"></app-highScores>
+<br/>
+<button class="exit-button" (click)="exitButton()">EXIT GAME</button>

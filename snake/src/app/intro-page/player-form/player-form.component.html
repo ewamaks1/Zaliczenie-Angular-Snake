@@ -1,0 +1,46 @@
+<form class="form" [formGroup]="playerForm" submit="onSubmit()">
+    <label>Name:</label>
+    <input 
+      name="name"
+      type="text"
+      placeholder="Your name"
+      formControlName="name"
+    />
+    <div 
+      *ngIf="playerForm.controls['name'].touched && !playerForm.controls['name'].valid">
+      Wrong! The name should consist of at least 5 characters!
+    </div>
+    <label>Auth code:</label>
+    <input 
+      name="auth_code"
+      type="text"
+      placeholder="Your auth code"
+      formControlName="auth_code"
+    />
+    <div 
+      *ngIf="playerForm.controls['auth_code'].touched && !playerForm.controls['auth_code'].valid">
+      Wrong! Put correct auth code
+  </div>
+    <div>
+    </div>
+<br/>
+<br/>
+<div>
+  <label>Select color palette: </label>
+  <select
+    formControlName="paletteSelected">
+    <option value="normal">Normal</option>
+    <option value="high_contrast">High contrast</option>
+</select>
+</div>
+<br/>
+<br/>
+  <div>
+    <button
+      type="submit"
+      [disabled]="!playerForm.valid"
+      (click)="playGame()">
+        Start Game
+      </button>
+  </div>
+</form>

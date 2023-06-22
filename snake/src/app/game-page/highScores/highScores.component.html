@@ -1,0 +1,20 @@
+<div>
+  <br/>
+  <button class="scores" (click)="updateScoresDisplay()">
+    {{ showScores ? 'HIDE HIGHSCORES' : 'SHOW HIGHSCORES' }}
+  </button>
+</div>
+<div *ngIf="showScores">
+  <div>
+    <label>Sorting: </label>
+    <select [(ngModel)]="sortBy">
+      <option value="ascending">ascending</option>
+      <option value="descending">descending</option>
+    </select>
+    <h3>TOP 10 HIGHSCORES:</h3>
+    <ol>
+      <div *ngFor="let score of allScores | top10scores: 10 | sort: sortBy">
+        <li>{{ score.name }} {{ score.score }}</li>
+      </div>
+    </ol>
+</div>

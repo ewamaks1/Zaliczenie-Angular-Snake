@@ -1,0 +1,14 @@
+    <div>
+      <ng-container *ngIf="gameStatus.isReady; else gameStarted">
+        <h2>Game ready! Let's play a game!</h2>
+      </ng-container>
+      <ng-template #gameStarted>
+        <h2 *ngIf="gameStatus.isGo">Game started... Good luck!</h2>
+        <h2 *ngIf="gameStatus.isPaused">Game paused!</h2>
+        <h2 *ngIf="gameStatus.isGameOver">Game Over!</h2>
+      </ng-template>
+      <br/>
+      <br/>
+      <p>Your points: {{ gameInfo.score }}</p>
+      <p>Time in the game: {{ gameInfo.timeInTheGame }}s</p>
+    </div>

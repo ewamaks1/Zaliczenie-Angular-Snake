@@ -1,0 +1,9 @@
+<div class="button-list">
+    <button (click)="onButtonPressed('start')" [disabled]="gameStatus.isGameOver || gameStatus.isGo">Start</button>
+    <button (click)="onButtonPressed('stop')" [disabled]="gameStatus.isReady || gameStatus.isPaused || gameStatus.isGameOver">Stop</button>
+    <button (click)="onButtonPressed('reset')" [disabled]="gameStatus.isReady || gameStatus.isGo">Reset</button>
+    <button (click)="onButtonPressed('up')" [disabled]="!gameStatus.isGo">Up</button>
+    <button (click)="onButtonPressed('left')" [disabled]="!gameStatus.isGo">Left</button>
+    <button (click)="onButtonPressed('right')" [disabled]="!gameStatus.isGo">Right</button>
+    <button (click)="onButtonPressed('down')" [disabled]="!gameStatus.isGo">Down</button>
+  </div>

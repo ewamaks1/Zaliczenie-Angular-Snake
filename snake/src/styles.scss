@@ -1,0 +1,53 @@
+html {
+    background-image: url("./app/unnamed.png");
+    width: 100%;
+    height: 100vh; 
+    margin: 0 px;
+    padding: 0px;
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    position: relative;   
+}
+
+ ngx-snake {
+    &.high_contrast{
+        ngx-snake-tile {
+          background: #ffffff;
+          &.free {
+              div {
+                  background: #ffffff;
+              }
+          }
+
+          &.head,
+          &.tail,
+          &.food,
+          &.body {
+              div {
+                  background: #000000;
+              }
+          }
+      }
+  }
+}
+ngx-snake {
+    &.normal{
+        ngx-snake-tile {
+          background: #ffffff;
+          &.free {
+              div {
+                  background: #cbd4e9e0;
+              }
+          }
+
+          &.head,
+          &.tail,
+          &.food,
+          &.body {
+              div {
+                  background: #0a9c36;
+              }
+          }
+      }
+  }
+}
